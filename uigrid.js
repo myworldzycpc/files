@@ -25,7 +25,19 @@ function getblock(x,y){
 function createlement(tagname){
 	return $(`<${tagname}></${tagname}>`);
 };
-	
+function marge(x,y,xd,yd){
+	getblock(x,y).attr({
+		"colspan":xd,
+		"rowspan":yd,
+	});
+	for (var xs = x; xs < x + xd; xs++){
+		for (var ys = y; ys < y + yd; ys++){
+			if ((xs != x) && (ys != y)){
+				getblock(xs,ys).remove();
+			};
+		};
+	};
+};
 var ing = initgrid;
 var gbl = getblock;
 var cel = createlement;
