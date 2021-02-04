@@ -15,7 +15,7 @@ function initgrid(width,height,border){
 	};
 	$table.attr({"class":"uigrid"});
 		
-	$("body").append($table);
+	return $table;
 };
 	
 function getblock(x,y){
