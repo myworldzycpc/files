@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"> 
+<title>Minecraft JSON文本生成器</title>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	function clone(obj){
+		return JSON.parse(JSON.stringify(obj));
+	};
+	$("*").css({"font-size":`${parseInt($("body").innerWidth()/35)}px`});
+	var selectpara = 0;
+	var defaultpara = {
+		"mode":"text",
+		"params":["文本"],
+		"styles":{
+			"color":"red",
+			"bold":false,
+			"italic":false,
+			"underlined":false,
+			"strikethrough":false,
+			"obfuscated":false,
+			"font":"minecraft:default",
+		},
+		"event":{
+			"clickEvent":{
+				"enabled":false,
+				"action":"run_command",
+				"value":"",
+			},
+			"hoverEvent":{
+				"enabled":false,
+				"action":"show_text",
+				"contents":"",
+			},
+		},
+	};
+	var paras = [clone(defaultpara)];
+	$("#start").fadeIn(400);
+	$(".creatnew").click(function(){
+		$("#start").fadeOut(200,function(){$("#content").fadeIn(200)});
+		
+	});
+	$(".listbox").children().click(function(){
+		selectpara = $(this).index();
+		$(".listbox").children().attr({"class":""});
+		$(".listbox").children().eq(selectpara).attr({"class":"selected"})
+	});
+	$(".contentypechange").click(function(){
+		$(".contentypeshow").fadeOut(100,function(){$(".contentypeselect").fadeIn(100)});		
+	});
+	$(".contentypefix").click(function(){
+		paras[selectpara].mode = $(".contentypeselector").val();
+		updatelist();
+		$(".contentypeselect").fadeOut(100,function(){$(".contentypeshow").fadeIn(100)});
+	});
+	
+	$(".createafter").click(function(){
+		paras.splice(selectpara+1,0,clone(defaultpara));
+		
+		$(".listbox").children().eq(selectpara).after($("<div></div>").css({"display":"none"}).html("文本").fadeIn(100));
+		selectpara++;
+		updatelist();
+	});
+	function updatelist(){
+		for (var i = 0; i < paras.length; i++){
+			if (paras[i].mode == "text"){
+				$(".listbox").children().eq(i).html(paras[i].params[0]);
+			} else {
+				$(".listbox").children().eq(i).html(`<i style="color:gray">[${paras[i].mode}]</i>`);
+			};
+		};
+		$(".listbox").children().attr({"class":""});
+		$(".listbox").children().eq(selectpara).attr({"class":"selected"})
+		$(".listbox").children().click(function(){
+			selectpara = $(this).index();
+			updatelist();
+		});
+	};
+	$(".deleteselection").click(function(){
+		if (paras.length > 1){
+			paras.splice(selectpara,1);
+		
+			$(".listbox").children().eq(selectpara).fadeOut(100,function(){
+				$(".listbox").children().eq(selectpara).remove();
+				if (selectpara >= paras.length){
+					selectpara--;
+				};
+				updatelist();
+			});
+		};
+	});
+});
+</script>
+<style>
+	.box{
+		border:2px solid black;
+		background-color:rgb(240,240,240);
+		
+	}
+	.table{
+		width:100%;
+		
+	}
+	.btn{
+		border:2px solid rgb(190,190,190);
+		background-color:rgb(210,210,210);
+		
+	}
+	.btn:hover{
+		border:2px solid rgb(0,0,0);
+	}
+	.input{
+		-webkit-appearance: none;
+		border:2px solid black;
+		border-radius:0px;
+		background-color:white;
+		width:90%;
+	}
+	.build{
+		border:2px solid rgb(128,128,128);
+		background-color:rgb(255,0,0);
+		color:white;
+	}
+	td{
+		margin:5px;
+	}
+	.listbox{
+		border:2px solid black;
+		background-color:white;
+	}
+	.selected{
+		background-color:blue;
+		color:white;
+	}
+</style>
+</head>
+<body>
+	<div class="box" id="start" style="padding:10%;display:none">
+		<table class="table" cellspacing="10">
+			<tr> 
+				<td colspan="2" style="text-align:center">欢迎使用</td>
+			</tr>
+			<tr>
+				<td class="btn creatnew" colspan="2" style="text-align:center">新建</td>
+			</tr>
+			<tr>
+				<td><input class="input loadjson" type="text" placeholder="文本"></td>
+				<td class="btn load" style="text-align:center">载入</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="text-align:center;color:rgb(150,150,150)"><small>选择新建还是载入</small></td>
+			</tr>
+		</table>
+	</div>
+	<div class="box" id="content" style="display:none">
+		<table class="table" cellspacing="0" style="height:100%">
+			<tr>
+				<td rowspan=3 style="width:50%">
+					<table class="table" cellspacing="0" style="height:100%">
+						<tr>
+							<td valign="top" class="listbox" colspan="2">
+								<div class="selected">文本</div>
+							</td>
+						</tr>
+						<tr>
+							<td class="btn createafter" style="height:1px">在下方新建</td>
+							<td class="btn deleteselection" style="height:1px">删除选中文本片段</td>
+						</tr>
+						<tr>
+							<td class="btn build" colspan=2 style="height:1px">生成</td>
+						</tr>
+					</table>
+				</td>
+				<td style="border-bottom:2px dashed black">
+					<div class="contentypeshow">
+						<p align="center" style="color:red">
+							<span>内容类型</span>
+							<span class="contentype" style="border:2px solid black;padding:5px">纯文本</span>
+							<span class="contentypechange"> 修改...</span>
+							
+						</p>
+						<table>
+							<tr>
+								<td align="right">文本</td>
+								<td><input class="input" type="text"><td>
+							</tr>
+						</table>
+					</div>
+					<table class="table contentypeselect" style="display:none">
+						<tr>
+							<td>
+								<select class="contentypeselector">
+									<option value="text">纯文本</option>
+									<option value="translate">已翻译文本</option>
+									<option value="score">记分板的值</option>
+									<option value="selector">实体选择器</option>
+									<option value="keybind">按键键位</option>
+									<option value="nbt">NBT的值</option>
+								</select>
+							</td>
+							<td align="center" class="btn contentypefix">确定</td>
+						</tr>	
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td style="border-bottom:2px dashed black">
+					<table>
+						<tr>
+							<td align="right">颜色</td>
+							<td><input class="input" type="text"></td>
+						</tr>
+						<tr>
+							<td align="right">粗体</td>
+							<td><input type="checkbox"></td>
+						</tr>
+						<tr>
+							<td align="right">斜体</td>
+							<td><input type="checkbox"></td>
+						</tr>
+						<tr>
+							<td align="right">下划线</td>
+							<td><input type="checkbox"></td>
+						</tr>
+						<tr>
+							<td align="right">删除线</td>
+							<td><input type="checkbox"></td>
+						</tr>
+						<tr>
+							<td align="right">模糊处理</td>
+							<td><input type="checkbox"></td>
+						</tr>
+						<tr>
+							<td align="right">字体</td>
+							<td><input class="input" type="text"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<table>
+						<tr>
+							<td align="right">点击事件</td>
+							<td><input type="checkbox"></td>
+						</tr>
+						<tr>
+							<td align="right">悬浮事件</td>
+							<td><input type="checkbox"></td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
