@@ -1,9 +1,9 @@
 function initgrid(width,height,border){
 	$table = $("<table></table>");
 		
-	for (var x = 0; x < width; x++){
+	for (var y = 0; y < height; x++){
 		$tr = $("<tr></tr>");
-		for (var y = 0; y < height; y++){
+		for (var x = 0; x < width; y++){
 			$td = $("<td></td>");
 			if (border){
 				$td.css({"border":"1px solid black"});
