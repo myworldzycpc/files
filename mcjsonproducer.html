@@ -5,12 +5,13 @@
 <title>Minecraft JSON文本生成器</title>
 <link rel="icon" type="image/png" href="mcjsonproducer.png"/>
 <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
-
+<script src="https://cdn.bootcdn.net/ajax/libs/fastclick/1.0.6/fastclick.js"></script>
 <script>
 $(document).ready(function(){
 	function clone(obj){
 		return JSON.parse(JSON.stringify(obj));
 	};
+	FastClick.attach(document.body);
 	$("*").css({"font-size":`${parseInt($("body").innerWidth()/35)}px`});
 	var selectpara = 0;
 	var defaultpara = {
