@@ -56,29 +56,30 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
-	<div id="lvo" class="progress" style="display:none">
-		<div id="lv" class="progress-bar" role="progressbar" aria-valuenow="60"   
-			 aria-valuemin="0" aria-valuemax="100" style="width: 0%;">    
+	<div class="container">
+		<div id="lvo" class="progress" style="display:none">
+			<div id="lv" class="progress-bar" role="progressbar" aria-valuenow="60"   
+			     aria-valuemin="0" aria-valuemax="100" style="width: 0%;">    
+			</div>
 		</div>
-	</div>
-	<div id="content" style="display:none">	
-		<div id="input" class="form-group">		
-			<label class="control-label" for="cp">验证码</label>		
-			<input type="text" class="form-control" id="cp" placeholder="请输入验证码">
-			<label id="ein" class="control-label" for="cp" style="display:none">输入错误</label>
+		<div id="content" style="display:none">	
+			<div id="input" class="form-group">		
+				<label class="control-label" for="cp">验证码</label>		
+				<input type="text" class="form-control" id="cp" placeholder="请输入验证码">
+				<label id="ein" class="control-label" for="cp" style="display:none">输入错误</label>
+			</div>
+			<button id="fix" class="btn btn-primary">确定</button>
 		</div>
-		<button id="fix" class="btn btn-primary">确定</button>
-		
-	</div>
-	<div id="successfully" class="container" style="display:none">
-		<div class="jumbotron">
-			<h1>验证成功！</h1>
-			<p>通过js发送QQ消息，本地生成随机数，再本地发送QQ消息（通过QQ开放平台），然后在本地进行比对（不会泄漏密码，因为源代码里我写的是散列值）</p>
-			<p>
-				<a class="btn btn-primary btn-lg" role="button" onclick="location.reload();">
-					再来一次
-				</a>
-			</p>
+		<div id="successfully" class="container" style="display:none">
+			<div class="jumbotron">
+				<h1>验证成功！</h1>
+				<p>通过js发送QQ消息，本地生成随机数，再本地发送QQ消息（通过QQ开放平台），然后在本地进行比对（不会泄漏密码，因为源代码里我写的是散列值）</p>
+				<p>
+					<a class="btn btn-primary btn-lg" role="button" onclick="location.reload();">
+						再来一次
+					</a>
+				</p>
+			</div>
 		</div>
 	</div>
 </body>
