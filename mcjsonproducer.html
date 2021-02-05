@@ -40,7 +40,7 @@ $(document).ready(function(){
 		},
 	};
 	var paras = [clone(defaultpara)];
-	$("#start").css({"margin-left":`${$("body").innerWidth()}px`}).stop().animate({"margin-left":"0px"},{speed:"slow", queue:false}).fadeIn(400);
+	$("#start").css({"margin-left":`${$("body").innerWidth()}px`,"width":"1px"}).stop().animate({"margin-left":"0px","width":"100%"},{speed:"slow", queue:false}).fadeIn(400);
 	$(".creatnew").click(function(){
 		$("#start").fadeOut(200,function(){$("#content").fadeIn(200)});
 	});
