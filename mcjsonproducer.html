@@ -40,7 +40,7 @@ $(document).ready(function(){
 		},
 	};
 	var paras = [clone(defaultpara)];
-	$("#start").css({"height":"1px","width":"1px"}).stop().animate({"height":"100%","width":"100%"},{speed:"slow", queue:false}).fadeIn(400,function(){
+	$("#start").fadeIn(400,function(){
 		$(".startmenu").fadeIn(100);
 	});
 	$(".creatnew").click(function(){
