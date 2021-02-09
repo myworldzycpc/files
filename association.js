@@ -68,3 +68,30 @@ var Uio = {
 		};
 	},
 };
+var dynamicLoading = {
+	css: function(path) {
+		if (!path || path.length === 0) {
+			throw new Error('argument "path" is required !');
+		}
+		var head = document.getElementsByTagName('head')[0];
+		var link = document.createElement('link');
+		link.href = path;
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		head.appendChild(link);
+	},
+	js: function(path) {
+		if (!path || path.length === 0) {
+			throw new Error('argument "path" is required !');
+		}
+		var head = document.getElementsByTagName('head')[0];
+		var script = document.createElement('script');
+		script.src = path;
+		script.type = 'text/javascript';
+		head.appendChild(script);
+	}
+};
+dynamicLoading.css("https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css");
+dynamicLoading.css("https://myworldzycpc.github.io/files/association.css");
+dynamicLoading.js("https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js");
+dynamicLoading.js("https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js");
