@@ -91,7 +91,3 @@ var dynamicLoading = {
 		head.appendChild(script);
 	}
 };
-dynamicLoading.css("https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css");
-dynamicLoading.css("https://myworldzycpc.github.io/files/association.css");
-dynamicLoading.js("https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js");
-dynamicLoading.js("https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js");
