@@ -71,7 +71,7 @@ var Uio = {
 var dynamicLoading = {
 	css: function(path) {
 		if (!path || path.length === 0) {
-			throw new Error('argument "path" is required !');
+			alert('argument "path" is required !');
 		}
 		var head = document.getElementsByTagName('head')[0];
 		var link = document.createElement('link');
