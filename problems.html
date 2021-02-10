@@ -1,9 +1,8 @@
 
 <script>
 var cols = 1;
-setInterval(finction(){
-var items = ["缺少括号）","缺少括号]","缺少括号}","变量未定义","数值超出运算范围","无法关闭非脚本打开的页面","无法请求来自不同域的页面"
-,"null类型不可被调用","缺少实参","无法重定向至当前页面"];
+setInterval(function(){
+var items = ["缺少括号）","缺少括号]","缺少括号}","变量未定义","数值超出运算范围","无法关闭非脚本打开的页面","无法请求来自不同域的页面","null类型不可被调用","缺少实参","无法重定向至当前页面"];
 
 var randomItem = items[Math.floor(Math.random() * items.length)];
 cols = cols + Math.floor(Math.random() * 20)
