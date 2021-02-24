@@ -1,0 +1,25 @@
+<html><head><script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+  
+      var url = document.location.toString();//获取url地址
+  
+  if ( url.indexOf('?') == (-1) ){
+    document.write("参数：收件人,标题,内容");
+  }else{
+    var urlParmStr = url.slice(url.indexOf('?')+1);//获取问号后所有的字符串
+    var decodehtml = window.decodeURIComponent(atob(urlParmStr))
+    
+var strs= new Array(); //定义一数组 
+strs=decodehtml.split(","); //字符分割 
+    Email.send({
+    Host : "smtp.163.com",
+    Username : "myworldzhangyichen@163.com",
+    Password : "zhang0719",
+    To : strs[0],
+    From : "myworldzhangyichen@163.com",
+    Subject : strs[1],
+    Body : strs[2],
+    });
+  }
+  </script></head><body></body>
+</html>
