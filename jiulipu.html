@@ -1,78 +1,117 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>就离谱</title>
-    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">  
-    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
-    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>
-$(function(){
-    $(".container").fadeIn(200);
-})
-</script>
-</head>
-<body>
-​
-<div class="container hide">
-    <div class="jumbotron">
-        <h1>就离谱！</h1>
-        <p>你说“就离谱”的统计<br><span class="text-warning">这个网站只有袁照雯可以看</span></p>
-        <p><button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-            总共说了多少次</button>
-        </p>
-    </div>
-    <!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
-                    &times;
-                </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    你总共说“就离谱”的次数
-                </h4>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>就离谱</title>
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+            $(function() {
+                $(".container").fadeOut(200);
+            })
+        </script>
+    </head>
+    
+    <body>
+        ​
+        <div class="container">
+            <div class="jumbotron">
+                <h1>
+                    就离谱！
+                </h1>
+                <p>
+                    你说“就离谱”的统计
+                    <br>
+                    <span class="text-warning">
+                        这个网站只有袁照雯可以看
+                    </span>
+                </p>
+                <p>
+                    <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                        总共说了多少次
+                    </button>
+                </p>
             </div>
-            <div class="modal-body">
-                <span class="text-success" style="font-size:30px">48</span>次
-                <br><small>平均每天24次</small>
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+            aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                &times;
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">
+                                你总共说“就离谱”的次数
+                            </h4>
+                        </div>
+                        <div class="modal-body">
+                            <span class="text-success" style="font-size:30px">
+                                48
+                            </span>
+                            次
+                            <br>
+                            <small>
+                                平均每天24次
+                            </small>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">
+                                关闭
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                                压压惊
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal -->
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                </button>
-                <button type="button" class="btn btn-primary">
-                    压压惊
-                </button>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    2021年4月16日 星期五
+                </div>
+                <div class="panel-body">
+                    <span class="text-success" style="font-size:30px">
+                        30
+                    </span>
+                    次
+                </div>
             </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        2021年4月16日 星期五
-    </div>
-    <div class="panel-body">
-       <span class="text-success" style="font-size:30px">30</span>次
-    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        2021年4月19日 星期一
-    </div>
-    <div class="panel-body">
-       <span class="text-success" style="font-size:30px">18</span>次<br><small>比16日减少12次，继续加油</small>
-    </div>
-</div>
-<div class="panel panel-default">
-    <div class="panel-heading">
-        2021年4月20日 星期二
-    </div>
-    <div class="panel-body">
-       <span class="text-success" style="font-size:30px">???</span>次<br><small>今天期中考试，没有记录</small>
-    </div>
-</div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    2021年4月19日 星期一
+                </div>
+                <div class="panel-body">
+                    <span class="text-success" style="font-size:30px">
+                        18
+                    </span>
+                    次
+                    <br>
+                    <small>
+                        比16日减少12次，继续加油
+                    </small>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    2021年4月20日 星期二
+                </div>
+                <div class="panel-body">
+                    <span class="text-success" style="font-size:30px">
+                        ???
+                    </span>
+                    次
+                    <br>
+                    <small>
+                        今天期中考试，没有记录
+                    </small>
+                </div>
+            </div>
+        </div>
+    </body>
 
-</div>
-</body>
 </html>
