@@ -13,7 +13,7 @@
                 $("#prog").hide();
                 $("#prog").fadeIn(200);
                 $("#progbar").animate({"width":"100%"},1000,function(){
-                    $("#prog").fadeOut(500,function(){$("#content").fadeIn(200)});
+                    $("#prog").fadeOut(500,function(){$("#content").fadeIn(200,function({$("*").animate({"font-size":"+=10%"},200)}))});
                 });
             })
         </script>
