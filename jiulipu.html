@@ -13,7 +13,7 @@
                 $("#prog").hide();
                 $("#prog").fadeIn(200);
                 $("#progbar").animate({"width":"100%"},1000,function(){
-                    $("#prog").fadeOut(500,function(){$("#content").fadeIn(200)});
+                    $("#prog").fadeOut(500,function(){$("#content").slideDown(500)});
                 });
             })
         </script>
@@ -60,7 +60,7 @@
                             </h4>
                         </div>
                         <div class="modal-body">
-                            <span class="text-success" style="font-size:30px">59</span>次
+                            <span class="text-success" style="font-size:30px">67</span>次
                             <br>
                             <small>
                                 平均每天12次
