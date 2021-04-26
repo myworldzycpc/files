@@ -15,6 +15,12 @@
                 $("#progbar").animate({"width":"100%"},1000,function(){
                     $("#prog").fadeOut(500,function(){$("#content").slideDown(500)});
                 });
+                $("#yajing").click(function(){
+                    $("#content").slideUp(500,function(){$("#prog").fadeIn(500,function(){
+                        $("#progbar").animate({"width":"0%"},1000);
+                        $("#prog").fadeOut(200);
+                    })});
+                });
             })
         </script>
     </head>
@@ -64,13 +70,13 @@
                             <br>
                             <small>
                                 平均每天12次
-                            </small>
+                            </small><hr>你溺水过吗？你触电过吗？你烫伤过吗？你骨折过吗？你被高速旋转的东西夹到过吗？这些王宗言都经历过。
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">
                                 关闭
                             </button>
-                            <button type="button" class="btn btn-primary">
+                            <button id="yajing" type="button" class="btn btn-primary" data-dismiss="modal">
                                 压压惊
                             </button>
                         </div>
@@ -78,6 +84,20 @@
                     <!-- /.modal-content -->
                 </div>
                 <!-- /.modal -->
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    2021年4月26日 星期一
+                </div>
+                <div class="panel-body">
+                    <span class="text-success" style="font-size:30px">8</span>次
+                    <br>
+                    <small>
+                        和25日一样！
+                    </small><hr>生物老师：袁照倩你来背一下
+                    <br><span class="text-warning">你认为袁照倩在不远处打喷嚏</span>
+                </div>
             </div>
 
             <div class="panel panel-default">
