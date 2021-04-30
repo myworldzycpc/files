@@ -21,6 +21,7 @@
                         $("#prog").fadeOut(1500);
                     })});
                 });
+                $("#myCarousel").carousel('cycle');
             })
         </script>
     </head>
@@ -100,7 +101,28 @@
                 <hr>遗憾归遗憾，人不能一直停留在原地吧。
 
             </div>
-            
+            <div id="myCarousel" class="carousel slide">
+                <!-- 轮播（Carousel）指标 -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>   
+​
+            <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="alert alert-info text-center">当你把安全感建立在别人身上 他们随时都可以把你撂倒。</div>
+        </div>
+        <div class="item">
+            <div class="alert alert-info text-center">大概是还不够优秀，还不值得拥有。</div>
+        </div>
+        <div class="item">
+            <div class="alert alert-info text-center">遗憾归遗憾，人不能一直停留在原地吧。</div>
+        </div>
+    </div>
+    
+</div>
 </div>
 </div>
             <div class="panel panel-default">
