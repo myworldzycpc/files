@@ -12,7 +12,11 @@
     $("#prog").hide();
     $("#prog").fadeIn(200);
     $("#progbar").animate({"width":"100%"},1000,function(){
-     $("#prog").fadeOut(500,function(){$("#content").slideDown(500)});
+     $("#prog").fadeOut(500,function(){
+      $("#content").slideDown(500,function(){
+       $("#dvimg").fadeIn(500);
+      });
+     });
     });
     $("#yajing").click(function(){
      $("#content").slideUp(500,function(){$("#prog").fadeIn(500,function(){
@@ -56,7 +60,7 @@
      </div> 
     </div> 
     <div class="text-center">
-     版本 5.2.19
+     版本 5.2.20
     </div>
    </div>
    <div id="content"> 
