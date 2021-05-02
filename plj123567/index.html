@@ -22,6 +22,7 @@
     });
     $("#myCarousel").carousel('cycle');
     $("#starimage").load("pic1.html");
+    $("#floatimage").load("pic2.html");
     $("#autoset").click(function(){
      $("#content").fadeOut(200,function(){
       var devicewidth = document.documentElement.clientWidth;
@@ -32,6 +33,18 @@
     });
    })
   </script> 
+  <style type="text/css">
+   #dvimg
+   {
+    z-index: 999;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    _position: absolute; /* for IE6 */
+    _top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); /* for IE6 */
+    overflow: visible;
+   }
+  </style>
  </head> 
  <body>
    ​ 
@@ -118,6 +131,10 @@
        </div> 
       </div> 
      </div> 
+    </div>
+    <div id="dvimg">
+     <div id="floatimage" style="height: 40px; width: 1003px; margin-left: 0px; float: left">
+     </div>
     </div>
     <div class="alert alert-success">
      <div id="starimage" class="center-block"></div><hr>
