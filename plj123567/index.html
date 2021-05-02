@@ -23,6 +23,7 @@
     $("#myCarousel").carousel('cycle');
     $("#starimage").load("pic1.html");
     $("#floatimage").load("pic2.html");
+    $("#passpic").load("pic2.html");
     $("#autoset").click(function(){
      $("#content").fadeOut(200,function(){
       var devicewidth = document.documentElement.clientWidth;
@@ -39,7 +40,6 @@
     z-index: 999;
     position: fixed;
     bottom: 0px;
-    left: 0px;
     _position: absolute; /* for IE6 */
     _top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); /* for IE6 */
     overflow: visible;
@@ -276,7 +276,7 @@
       <span class="text-success" style="font-size:30px">30</span>次 
      </div> 
     </div> 
-    <div style="height:50%"></div>
+    <div id="passpic" style="opacity:0"></div>
    </div> 
   </div>   
  </body>
