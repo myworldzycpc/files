@@ -10,11 +10,12 @@
    $(function() {
     $("#content").hide();
     $("#prog").hide();
+    $("#dvimg").hide();
     $("#prog").fadeIn(200);
     $("#progbar").animate({"width":"100%"},1000,function(){
      $("#prog").fadeOut(500,function(){
       $("#content").slideDown(500,function(){
-       $("#dvimg").fadeIn(500);
+       $("#dvimg").fadeTo(0.8);
       });
      });
     });
@@ -46,7 +47,7 @@
     _position: absolute; /* for IE6 */
     _top: expression(documentElement.scrollTop + documentElement.clientHeight-this.offsetHeight); /* for IE6 */
     overflow: visible;
-    opacity:0.8
+    opacity:0
    }
   </style>
  </head> 
