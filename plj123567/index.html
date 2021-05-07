@@ -14,13 +14,13 @@
     $("#prog").fadeIn(200);
     $("#progbar").animate({"width":"100%"},1000,function(){
      $("#prog").fadeOut(500,function(){
-      $("#content").slideDown(500,function(){
+      $("#content").slideDown(1000,function(){
        $("#dvimg").fadeIn(200);
       });
      });
     });
     $("#yajing").click(function(){
-     $("#content").slideUp(500,function(){$("#prog").fadeIn(500,function(){
+     $("#content").slideUp(1000,function(){$("#prog").fadeIn(500,function(){
       $("#progbar").animate({"width":"0%"},1000);
       $("#prog").fadeOut(1500);
      })});
@@ -50,7 +50,7 @@
      </div> 
     </div> 
     <div class="text-center">
-     版本 5.7.1
+     版本 5.7.2
     </div>
    </div>
    <div id="content"> 
@@ -126,7 +126,7 @@
       </div> 
      </div> 
     </div>
-    <div class="panel panel-danger">
+    <div class="panel panel-danger text-danger">
      <div class="panel-heading">
       2021年5月7日 星期五
      </div>
