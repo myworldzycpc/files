@@ -13,12 +13,18 @@
     </style> 
   <script>
    $(function(){
-    $('#pdi').css({"height":"100%"});
+    $('#pdi').hide();
     $('#cont').hide();
     $('html,body').animate({ scrollTop: $(document).height() }, 270000,function(){
      $('#cont').fadeOut(1000);
     });
-    $('#cont').fadeIn(1000);
+    $('#pid').fadeIn(1000,function(){
+     window.setTimeout(function(){
+      $('#pid').fadeOut(1000,function(){
+       $('#cont').fadeIn(1000);
+      })
+     },1000)
+    })
    });
   </script>
  </head> 
