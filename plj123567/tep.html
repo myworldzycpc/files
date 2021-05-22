@@ -18,13 +18,10 @@
     $('html,body').animate({ scrollTop: $(document).height() }, 270000,function(){
      $('#cont').fadeOut(1000);
     });
-    function stt(){
-     $('#tip').fadeOut(1000,function(){
+    $('#tip').fadeIn(1000,function(){
+     $('#tip').fadeOut(2000,function(){
       $('#cont').fadeIn(1000);
      });
-    };
-    $('#tip').fadeIn(1000,function(){
-     window.setTimeout("stt()",1500);
     });
    });
   </script>
@@ -34,6 +31,7 @@
    <p><a href="https://myworldzycpc.github.io/files/plj123567/" class="btn btn-success" style="position:fixed">返回</a></p>
    <div id="tip" class="text-center">不要滑动页面，静静观看...</div>
    <div id="cont" class="text-center" style="font-size:200%">
+   <br><br><br>
    <p class="person1">I see the player you mean.</p>
    <p class="person2">[PLAYERNAME]?</p>
    <p class="person1">Yes.<br /> Take care.<br /> It has reached a higher level now.<br /> It can read our thoughts.</p>
