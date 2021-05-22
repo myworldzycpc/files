@@ -13,7 +13,7 @@
     </style> 
   <script>
    $(function(){
-    $('#pdi').css({"height":`${$(window).height-50}px`});
+    $('#pdi').css({"height":"100%"});
     $('#cont').hide();
     $('html,body').animate({ scrollTop: $(document).height() }, 270000,function(){
      $('#cont').fadeOut(1000);
@@ -25,7 +25,7 @@
  <body>
   <div class="container"> <br>
    <p><a href="https://myworldzycpc.github.io/files/plj123567/" class="btn btn-success" style="position:fixed">返回</a></p>
-   <div id="pdi"></div>
+   <div id="pdi" class="text-center">不要滑动页面，静静观看...</div>
    <div id="cont" class="text-center" style="font-size:200%">
    <p class="person1">I see the player you mean.</p>
    <p class="person2">[PLAYERNAME]?</p>
