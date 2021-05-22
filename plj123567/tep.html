@@ -18,13 +18,14 @@
     $('html,body').animate({ scrollTop: $(document).height() }, 270000,function(){
      $('#cont').fadeOut(1000);
     });
+    function stt(){
+     $('#pid').fadeOut(1000,function(){
+      $('#cont').fadeIn(1000);
+     });
+    };
     $('#pid').fadeIn(1000,function(){
-     window.setTimeout(function(){
-      $('#pid').fadeOut(1000,function(){
-       $('#cont').fadeIn(1000);
-      })
-     },1000)
-    })
+     window.setTimeout("stt()",1500);
+    });
    });
   </script>
  </head> 
