@@ -15,7 +15,9 @@
    $(function(){
     $('#tip').hide();
     $('#cont').hide();
-    $('html,body').animate({ scrollTop: $(document).height() }, 270000,function(){
+    viewH =$(window).height();
+    contentH =$("#cont").height();
+    $('html,body').animate({ scrollTop: viewH + contentH }, 270000,function(){
      $('#cont').fadeOut(1000);
     });
     $('#tip').fadeIn(1000,function(){
