@@ -13,22 +13,32 @@
    }
    .person1{color:blue}
    .person2{color:green}
-   p{font-family:minecraft}
+   p{
+    font-family:minecraft;
+    padding:30px 0;
+   }
   </style> 
   <script>
    $(function(){
     $('#tip').hide();
-    $('#cont').hide();
-    viewH =$(window).height();
-    contentH =$("#cont").height();
-    $('html,body').animate({ scrollTop: viewH + contentH }, 540000,function(){
-     $('#cont').fadeOut(1000);
-    });
-    $('#tip').fadeIn(1000,function(){
-     $('#tip').fadeOut(2000,function(){
-      $('#cont').fadeIn(1000);
+    $('#cont').css({"opacity":"0"});
+    $('body').animate({"scrollTop":9e9},1000,function(){
+     var scrolltopTemp =document.documentElement.scrollTop||document.body.scrollTop;
+     $('#cont').hide();
+     $('#cont').css({"opacity":"1"});
+     $('html,body').animate({ scrollTop: scrolltopTemp}, 540000,function(){
+      $('#cont').fadeOut(1000);
+     });
+     $('#tip').fadeIn(1000,function(){
+      $('#tip').fadeOut(2000,function(){
+       $('#cont').fadeIn(1000);
      });
     });
+    });
+    $(window).resize(function(){window.location.reload()})
+    
+    
+    
    });
   </script>
  </head> 
