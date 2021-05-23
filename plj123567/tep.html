@@ -27,7 +27,9 @@
      $('#cont').hide();
      $('#cont').css({"opacity":"1"});
      $('html,body').animate({ scrollTop: scrolltopTemp}, 540000,function(){
-      $('#cont').fadeOut(1000);
+      $('#cont').fadeOut(1000,function(){
+       window.history.go(-1);
+      });
      });
      $('#tip').fadeIn(1000,function(){
       $('#tip').fadeOut(2000,function(){
@@ -36,15 +38,15 @@
     });
     });
     $(window).resize(function(){window.location.reload()})
-    
-    
-    
+    $("#bc").click(function(){
+     window.history.go(-1);
+    });
    });
   </script>
  </head> 
  <body>
   <div class="container"> <br>
-   <p><a href="https://myworldzycpc.github.io/files/plj123567/" class="btn btn-success" style="position:fixed">返回</a></p>
+   <p><button id="bc" class="btn btn-success" style="position:fixed">返回</button></p>
    <div id="tip" class="text-center">不要滑动页面，静静观看...</div>
    <div id="cont" style="font-size:200%">
    <br><br><br>
