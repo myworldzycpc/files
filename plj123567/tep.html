@@ -25,19 +25,18 @@
   <script>
    $(function(){
     $('#tip').hide();
-    $('#cont').css({"opacity":"0"});
     $('body').animate({"scrollTop":9e9},1000,function(){
      var scrolltopTemp =document.documentElement.scrollTop||document.body.scrollTop;
-     $('#cont').hide();
-     $('#cont').css({"opacity":"1"});
+     $('html,body').animate({ scrollTop: 0}, 0,function(){
      $('html,body').animate({ scrollTop: scrolltopTemp}, 540000,"linear",function(){
-      $('#cont').fadeOut(1000,function(){
+      $('#hm').fadeIn(1000,function(){
        window.history.go(-1);
       });
      });
+     });
      $('#tip').fadeIn(1000,function(){
       $('#tip').fadeOut(2000,function(){
-       $('#cont').fadeIn(1000);
+       $('#hm').fadeOut(1000);
      });
     });
     });
@@ -50,8 +49,6 @@
  </head> 
  <body>
   <div class="container"> <br>
-   <p><button id="bc" class="btn btn-success" style="position:fixed">返回</button></p>
-   <div id="tip" class="text-center" style="color:white">不要滑动页面，静静观看...</div>
    <div id="cont" style="font-size:200%">
    <br><br><br>
    <p class="person1">I see the player you mean.</p>
@@ -132,5 +129,8 @@
    <p class="person2">Wake up.<br /> </p>
    </div>
   </div>  
+  <div id="hm" style="background-color:black;position:fixed;height:100%;width:100%"></div>
+  <p><button id="bc" class="btn btn-success" style="position:fixed">返回</button></p>
+  <div id="tip" class="text-center" style="color:white">不要滑动页面，静静观看...</div>
  </body>
 </html>
