@@ -27,16 +27,17 @@
     $('#tip').hide();
     $('body').animate({"scrollTop":9e9},1000,function(){
      var scrolltopTemp =document.documentElement.scrollTop||document.body.scrollTop;
-     $('html,body').animate({ scrollTop: 0}, 0,function(){
+     $("#cont").hide()
      $('html,body').animate({ scrollTop: scrolltopTemp}, 540000,"linear",function(){
       $('#hm').fadeIn(1000,function(){
        window.history.go(-1);
       });
      });
-     });
      $('#tip').fadeIn(1000,function(){
       $('#tip').fadeOut(2000,function(){
+       $("#cont").fadeIn(1000)
        $('#hm').fadeOut(1000);
+       
      });
     });
     });
