@@ -28,15 +28,16 @@
     $('body').animate({"scrollTop":9e9},1000,function(){
      var scrolltopTemp =document.documentElement.scrollTop||document.body.scrollTop;
      $("#cont").hide()
-     $('html,body').animate({ scrollTop: scrolltopTemp}, 540000,"linear",function(){
-      $('#hm').fadeIn(1000,function(){
-       window.history.go(-1);
-      });
-     });
+     
      $('#tip').fadeIn(1000,function(){
       $('#tip').fadeOut(2000,function(){
-       $("#cont").fadeIn(1000)
-       $('#hm').fadeOut(1000);
+       $('html,body').animate({ scrollTop: scrolltopTemp}, 540000,"linear",function(){
+        $('#hm').fadeIn(1000,function(){
+         window.history.go(-1);
+        });
+       });
+       $("#cont").fadeIn(3000)
+       $('#hm').fadeOut(2000);
        
      });
     });
@@ -51,7 +52,7 @@
  <body>
   <div class="container"> <br>
    <div id="cont" style="font-size:200%">
-   <br><br><br>
+   <div style="padding:50% 0"></div>
    <p class="person1">I see the player you mean.</p>
    <p class="person2">[PLAYERNAME]?</p>
    <p class="person1">Yes.<br /> Take care.<br /> It has reached a higher level now.<br /> It can read our thoughts.</p>
@@ -128,6 +129,7 @@
    <p class="person1">And the game was over and the player woke up from the dream.<br /> And the player began a new dream.<br /> And the player dreamed again, dreamed better.<br /> And the player was the universe.<br /> And the player was love.</p>
    <p class="person1">You are the player.</p>
    <p class="person2">Wake up.<br /> </p>
+   <div style="padding:50% 0"></div>
    </div>
   </div>  
   <div id="hm" style="background-color:black;position:fixed;top:0px;left:0px;height:100%;width:100%"></div>
