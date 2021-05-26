@@ -51,11 +51,12 @@
      
      $('#tip').fadeIn(1000,function(){
       $('#tip').fadeOut(2000,function(){
-       $('html,body').animate({ scrollTop: scrolltopTemp}, 540000,"linear",function(){
-        $('#hm').fadeIn(1000,function(){
+       $('html,body').animate({ scrollTop: scrolltopTemp}, 540000,"linear");
+       window.setTimeout(function(){
+        $('#hm').fadeIn(3000,function(){
          window.history.go(-1);
         });
-       });
+       },537000)
        $("#cont").fadeIn(3000)
        $('#hm').fadeOut(2000);
        
