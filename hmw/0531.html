@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title></title> 
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> 
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> 
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script>
+   $(function(){
+    var nol = [];
+    $("#mainpanel>.panel-body .panel-body").each(function(){
+     if ($(this).html().length == 0){
+      nol.push($(this).parent().find(".panel-heading").html());
+      $(this).parent().remove();
+     };
+    });
+    if (nol.length != 0){
+     $("#noltx").html(`没有${nol.join("、")}作业`);
+    } else {
+     $("#noltx").hide();
+    };
+   });
+  </script>
+ </head> 
+ <body> 
+  <div class="container">
+   <div class="panel panel-default" id="mainpanel">
+    <div class="panel-heading">5月31日作业</div>
+    <div class="panel-body">
+     <div class="well" id="noltx"></div>
+     <div class="panel panel-default">
+      <div class="panel-heading">语文</div>
+      <div class="panel-body">分层卷周考卷（十二）做完。</div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">数学</div>
+      <div class="panel-body">课本193页10、11、12、15题。</div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">英语</div>
+      <div class="panel-body">
+       M10U1前6个句子写二默一。<br>
+       M10U1练习册方框+123。<br>一起作业。
+      </div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">政治</div>
+      <div class="panel-body"></div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">历史</div>
+      <div class="panel-body"></div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">地理</div>
+      <div class="panel-body"></div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">生物</div>
+      <div class="panel-body"></div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">物理</div>
+      <div class="panel-body"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
