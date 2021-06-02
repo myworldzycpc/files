@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title></title> 
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> 
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> 
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script>
+   $(function(){
+    var nol = [];
+    $("#mainpanel>.panel-body .panel-body").each(function(){
+     if ($(this).html().length == 0){
+      nol.push($(this).parent().find(".panel-heading").html());
+      $(this).parent().remove();
+     };
+    });
+    if (nol.length != 0){
+     $("#noltx").html(`没有${nol.join("、")}作业`);
+    } else {
+     $("#noltx").hide();
+    };
+   });
+  </script>
+ </head> 
+ <body> 
+  <div class="container">
+   <br>
+   <div class="panel panel-default" id="mainpanel">
+    <div class="panel-heading">作业</div>
+    <div class="panel-body">
+     <div class="well" id="noltx"></div>
+     <div class="panel panel-default">
+      <div class="panel-heading">语文</div>
+      <div class="panel-body">《茅屋为秋风所破歌》《卖炭翁》默一。<br>分层第六单元检测卷没做完的做完。</div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">数学</div>
+      <div class="panel-body">试卷1.2课时1~9题，第三题不做。</div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">英语</div>
+      <div class="panel-body">听写错的写2遍。<br>M10U2句子默一。<br>练习册M10U2的1234题。<br>一起作业。</div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">政治</div>
+      <div class="panel-body"></div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">历史</div>
+      <div class="panel-body"></div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">地理</div>
+      <div class="panel-body">背试卷</div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">生物</div>
+      <div class="panel-body"></div>
+     </div>
+     <div class="panel panel-default">
+      <div class="panel-heading">物理</div>
+      <div class="panel-body"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
