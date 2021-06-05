@@ -18,6 +18,9 @@
     }
    };
    $(function(){
+    var devicewidth = document.documentElement.clientWidth;
+    var scale = devicewidth / 400;
+    document.body.style.zoom = scale;
     $(".tp-result").hide()
     $(".tp-tfix").click(function(){
      $(".tp-start").fadeOut(1000,function(){
