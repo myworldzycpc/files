@@ -10,7 +10,7 @@
    function countoninput(){
     $(".tp-count").val($(".tp-count").val().replace(/[^\d]/g,''));
     $(".tp-conshow").html(Math.ceil($(".tp-count").val()));
-    $(".tp-money").html(Math.ceil($(".tp-count").val()/1000)*0.05);
+    $(".tp-money").html(Math.round(Math.ceil($(".tp-count").val()/1000)*0.07*100)/100);
     if ($(".tp-count").val() == 0){
      $(".tp-fix").addClass("disabled");
     } else {
@@ -37,7 +37,7 @@
     <div class="panel-body"> 
      <label for="count">数量</label> 
      <input class="tp-count form-control" oninput="countoninput();" />
-     <p class="help-block">起步价¥0.05</p>
+     <p class="help-block">起步价¥0.07</p>
      金额:&yen;
      <span class="tp-money">0</span>
      <br /> 
