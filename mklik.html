@@ -18,13 +18,18 @@
     }
    };
    $(function(){
-    document.body.style.zoom = 1;
+    var r = document.body.offsetWidth / window.screen.availWidth; 
+    $(document.body).css("-webkit-transform","scale(" + r + ")"); 
     $(".tp-result").hide()
     $(".tp-tfix").click(function(){
      $(".tp-start").fadeOut(1000,function(){
       $(".tp-result").fadeIn(500);
      });
     });
+   });
+   $(window).resize(function() { 
+    var r = document.body.offsetWidth / window.screen.availWidth; 
+    $(document.body).css("-webkit-transform","scale(" + r + ")"); 
    });
   </script> 
  </head> 
