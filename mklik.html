@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <meta charset="utf-8" /> 
+  <title>Bootstrap 实例 - 标题</title> 
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" /> 
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> 
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+  <script>
+   function countoninput(){
+    $(".tp-count").val($(".tp-count").val().replace(/[^\d]/g,''));
+    $(".tp-conshow").html(Math.ceil($(".tp-count").val()));
+    $(".tp-money").html(Math.ceil($(".tp-count").val()/1000)*0.05);
+    if ($(".tp-count").val() == 0){
+     $(".tp-fix").addClass("disabled");
+    } else {
+     $(".tp-fix").removeClass("disabled");
+    }
+   };
+   $(function(){
+    $(".tp-result").hide()
+    $(".tp-tfix").click(function(){
+     $(".tp-start").fadeOut(1000,function(){
+      $(".tp-result").fadeIn(500);
+     });
+    });
+   });
+  </script> 
+ </head> 
+ <body> 
+  <div class="container"> 
+   <div class="tp-start panel panel-default"> 
+    <div class="panel-heading">
+     刷赞
+    </div> 
+    <div class="panel-body"> 
+     <label for="count">数量</label> 
+     <input class="tp-count form-control" oninput="countoninput();" />
+     <p class="help-block">起步价¥0.05</p>
+     金额:&yen;
+     <span class="tp-money">0</span>
+     <br /> 
+     <button class="tp-fix btn btn-primary disabled" data-toggle="modal" data-target="#myModal">确定</button> 
+    </div> 
+   </div> 
+   <!-- 模态框（Modal） --> 
+   <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"> 
+    <div class="modal-dialog"> 
+     <div class="modal-content"> 
+      <div class="modal-header"> 
+       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
+       <h4 class="modal-title" id="myModalLabel">刷赞确认</h4> 
+      </div> 
+      <div class="modal-body">
+        <div class="panel panel-default">
+         <div class="panel-heading">详细信息</div>
+         <table class="table">
+          <tr><td>刷赞数量</td><td><span class="tp-conshow">0</span>个</td></tr>
+          <tr><td>金额</td><td>¥<span class="tp-money">0</span></td></tr>
+         </table>
+        </div>
+      </div> 
+      <div class="modal-footer"> 
+       <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button> 
+       <button type="button" class="tp-tfix btn btn-primary" data-dismiss="modal">提交</button> 
+      </div> 
+     </div>
+     <!-- /.modal-content --> 
+    </div>
+    <!-- /.modal --> 
+   </div>  
+   <div class="tp-result panel panel-default">
+    <div class="panel-heading">已提交</div>
+    <div class="panel-body">请向QQ3554503496转账<span class="tp-money">0</span>元，并注明“sz+你的QQ号”，如sz3554503496。</div>
+   </div>
+  </div>
+ </body>
+</html>
